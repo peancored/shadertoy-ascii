@@ -1,0 +1,17 @@
+{
+    "name": "Shasciidertoy",
+    "description": "Shadertoy ascii renderer",
+    "version": "1.0",
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+            "matches": ["https://*.shadertoy.com/view/*"],
+            "js": ["content-script.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "web_accessible_resources": [{
+        "resources": ["ascii-renderer.js"],
+        "matches": ["<all_urls>"]
+    }]
+}

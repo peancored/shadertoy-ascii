@@ -40,9 +40,9 @@ function smootherStep(x) {
 }
 
 const getColor = (value) => {
-    const color = greyscale[Math.floor(greyscale.length * value)];
-
-    return color === undefined ? greyscale[0] : color;
+    return value <= 0 ? greyscale[0] :
+        value >= 1 ? greyscale[greyscale.length - 1] : 
+        greyscale[Math.floor(greyscale.length * value)];
 }
 
 const font = document.createElement('link');
